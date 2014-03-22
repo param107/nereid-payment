@@ -139,18 +139,16 @@ setup(
         'Framework :: Tryton',
         'Topic :: Office/Business',
     ],
-    license='GPL-3',
+    license='GPLv3',
     install_requires=requires,
     zip_safe=False,
     entry_points="""
     [trytond.modules]
     nereid_payment = trytond.modules.nereid_payment
     """,
-    test_suite='tests',
-    test_loader='trytond.test_loader:Loader',
-    tests_require=['pycountry'],
+    test_suite='tests.suite',
     cmdclass={
-        'xmltests': XMLTests,
         'audit': RunAudit,
     },
+    test_loader='trytond.test_loader:Loader',
 )
